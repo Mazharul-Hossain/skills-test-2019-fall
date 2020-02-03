@@ -10,7 +10,7 @@ class PagesController < ApplicationController
             'And returned on the previous night.'            
         ]
         respond_to do |format|
-            format.html { render :daily_limerick }
+            format.html { render :daily_limerick, locals: {title: title, lines: lines } }
         end
     end
 
