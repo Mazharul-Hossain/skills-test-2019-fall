@@ -22,7 +22,7 @@ class PagesController < ApplicationController
             'Ned Flanders, the Simpsons\' religious devout neighbor he has two shy children and his wife Maude died in season 11.'
         ]
         respond_to do |format|
-            format.html { render :list_characters }
+            format.html { render :list_characters, locals: { title: title, characters: characters } }
         end
     end
 
