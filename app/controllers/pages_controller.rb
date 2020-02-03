@@ -7,7 +7,10 @@ class PagesController < ApplicationController
     end
 
     def do_echo
-        utterance = 'CHANGE ME'
+        utterance = '(nothing yet)'
+        if params.has_key? :utterance and not params[:utterance].blank?
+            utterance = params[:utterance]
+        end
         respond_to do |format|
             format.html { render :echo, locals: { utterance: utterance } }
         end
