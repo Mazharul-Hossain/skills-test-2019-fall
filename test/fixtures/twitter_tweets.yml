@@ -1,4 +1,17 @@
+# == Schema Information
+#
+# Table name: twitter_tweets
+#
+#  id         :bigint           not null, primary key
+#  message    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   message: Hello, world!
+
+two:
+  message: Hello, world! Complete the TwitterTweet model class by adding a validation that requires that the message string must not be longer than 140 characters in length. Complete the model test such that it verifies that a TwitterTweet object evaluates as invalid if it has a message value that is longer than 140 characters.
