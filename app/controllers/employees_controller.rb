@@ -15,13 +15,21 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    employee = Employee.new(params.require(:employee).permit(:dob))
+    # new object from params
+    employee = Employee.new(params.require(:employee).permit(:first_name, :last_name, :dob, :job_title))
+    
     respond_to do |format|
       format.html {
         if employee.save
-          # TODO
+          # success message
+          flash[:success] = "Employee information saved successfully"
+          # redirect to index
+          redirect_to employees_url
         else
-          # TODO
+          # error message
+          flash.now[:error] = "Error: Employee information could not be saved"
+          # render new
+          render :new, locals: { employee: employee } 
         end
       }
     end
