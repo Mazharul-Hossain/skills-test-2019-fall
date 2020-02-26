@@ -23,16 +23,4 @@ ActiveRecord::Schema.define(version: 2019_11_06_040721) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "climatological_observations", force: :cascade do |t|
-    t.string "station"
-    t.integer "year"
-    t.integer "month"
-    t.integer "day"
-    t.integer "max_temp"
-    t.integer "min_temp"
-    t.float "precipitation"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
 end
